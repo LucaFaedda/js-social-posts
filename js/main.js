@@ -56,9 +56,6 @@ const posts = [
     }
 ];
 
-
-
-
 let post = '';
 
 posts.forEach(elem => {
@@ -92,7 +89,10 @@ posts.forEach(elem => {
     </div> 
     </div>            
     </div> `
-    return elem
+
+    let numeroMiPiace = elem.likes
+    console.log(numeroMiPiace)
+    return numeroMiPiace
 });
 
 
@@ -100,7 +100,6 @@ const miPiace = document.querySelector('.like-button__label')
 console.log(miPiace)
 
 const postContain = document.querySelector('.posts-list');
-console.log(postContain)
 postContain.innerHTML += post
 
 
