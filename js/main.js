@@ -78,34 +78,43 @@ posts.forEach(elem => {
     <div class="post__footer">
     <div class="likes js-likes">
     <div class="likes__cta">
-    <a class="like-button  js-like-button" href="#" data-postid="1">
+    <a class="like-button  js-like-button" href="#" data-postid="${elem.id}">
     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
     <span class="like-button__label">Mi Piace</span>
     </a>
     </div>
     <div class="likes__counter">
-    Piace a <b id="like-counter-1" class="js-likes-counter">${elem.likes}</b> persone
+    Piace a <b id="like-counter-${elem.id}" class="js-likes-counter">${elem.likes}</b> persone
     </div>
     </div> 
     </div>            
     </div> `
 
-    let numeroMiPiace = elem.likes
-    console.log(numeroMiPiace)
-    return numeroMiPiace
 });
+
 
 
 
 const postContain = document.querySelector('.posts-list');
 postContain.innerHTML += post
 
+
 const miPiace = document.getElementsByClassName('js-like-button')
 console.log(miPiace)
+
+const new_array_post = []
 
 for (let i=0 ; i < miPiace.length ; i++){
     console.log(miPiace[i])
     miPiace[i].addEventListener('click',function(){
-        console.log(this)
+        
+        const postId = this.dataset.postid
+        new_array_post.push(postId)
+        console.log(new_array_post)
+
+        const likes = document.getElementById(`like-counter-${postId}`)
+        const likesNumber = parseInt(likes.innerText)
+        likes.innerText = likesNumber + 1;
+
     })
 }
