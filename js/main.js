@@ -103,7 +103,9 @@ postContain.innerHTML += post
 const miPiace = document.getElementsByClassName('js-like-button')
 console.log(miPiace)
 
-miPiace.addEventListener('click', function(){
-    console.log(this)
-})
-
+for (let i=0 ; i < miPiace.length ; i++){
+    console.log(miPiace[i])
+    miPiace[i].addEventListener('click',function(){
+        console.log(this)
+    })
+}
