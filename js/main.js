@@ -96,14 +96,14 @@ posts.forEach(elem => {
 });
 
 
-const miPiace = document.querySelector('.js-like-button')
-console.log(miPiace)
-
-miPiace.addEventListener('clik', function(){
-    console.log(this)
-})
 
 const postContain = document.querySelector('.posts-list');
 postContain.innerHTML += post
 
+const miPiace = document.getElementsByClassName('js-like-button')
+console.log(miPiace)
+
+miPiace.addEventListener('click', function(){
+    console.log(this)
+})
 
